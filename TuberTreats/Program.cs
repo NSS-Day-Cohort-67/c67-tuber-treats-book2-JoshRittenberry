@@ -53,6 +53,92 @@ List<TuberOrder> orders = new List<TuberOrder>()
     new TuberOrder { Id = 19, OrderPlacedOnDate = new DateTime(2023, 7, 21), CustomerId = 1, TuberDriverId = 1 },
     new TuberOrder { Id = 20, OrderPlacedOnDate = new DateTime(2023, 8, 8), CustomerId = 5 }
 };
+List<TuberTopping> orderToppings = new List<TuberTopping>
+{
+    new TuberTopping { Id = 1, TuberOrderId = 1, ToppingId = 1 },
+    new TuberTopping { Id = 2, TuberOrderId = 1, ToppingId = 2 },
+    new TuberTopping { Id = 3, TuberOrderId = 2, ToppingId = 4 },
+    new TuberTopping { Id = 4, TuberOrderId = 2, ToppingId = 2 },
+    new TuberTopping { Id = 5, TuberOrderId = 2, ToppingId = 3 },
+    new TuberTopping { Id = 6, TuberOrderId = 3, ToppingId = 6 },
+    new TuberTopping { Id = 7, TuberOrderId = 3, ToppingId = 4 },
+    new TuberTopping { Id = 8, TuberOrderId = 3, ToppingId = 9 },
+    new TuberTopping { Id = 9, TuberOrderId = 4, ToppingId = 7 },
+    new TuberTopping { Id = 10, TuberOrderId = 4, ToppingId = 10 },
+    new TuberTopping { Id = 11, TuberOrderId = 5, ToppingId = 7 },
+    new TuberTopping { Id = 12, TuberOrderId = 5, ToppingId = 10 },
+    new TuberTopping { Id = 13, TuberOrderId = 5, ToppingId = 8 },
+    new TuberTopping { Id = 14, TuberOrderId = 6, ToppingId = 5 },
+    new TuberTopping { Id = 15, TuberOrderId = 6, ToppingId = 6 },
+    new TuberTopping { Id = 16, TuberOrderId = 7, ToppingId = 3 },
+    new TuberTopping { Id = 17, TuberOrderId = 8, ToppingId = 4 },
+    new TuberTopping { Id = 18, TuberOrderId = 8, ToppingId = 2 },
+    new TuberTopping { Id = 19, TuberOrderId = 8, ToppingId = 9 },
+    new TuberTopping { Id = 20, TuberOrderId = 9, ToppingId = 3 },
+    new TuberTopping { Id = 21, TuberOrderId = 9, ToppingId = 4 },
+    new TuberTopping { Id = 22, TuberOrderId = 10, ToppingId = 8 },
+    new TuberTopping { Id = 23, TuberOrderId = 10, ToppingId = 7 },
+    new TuberTopping { Id = 24, TuberOrderId = 11, ToppingId = 9 },
+    new TuberTopping { Id = 25, TuberOrderId = 11, ToppingId = 6 },
+    new TuberTopping { Id = 26, TuberOrderId = 12, ToppingId = 4 },
+    new TuberTopping { Id = 27, TuberOrderId = 12, ToppingId = 2 },
+    new TuberTopping { Id = 28, TuberOrderId = 13, ToppingId = 7 },
+    new TuberTopping { Id = 29, TuberOrderId = 13, ToppingId = 4 },
+    new TuberTopping { Id = 30, TuberOrderId = 14, ToppingId = 1 },
+    new TuberTopping { Id = 31, TuberOrderId = 14, ToppingId = 9 },
+    new TuberTopping { Id = 32, TuberOrderId = 14, ToppingId = 10 },
+    new TuberTopping { Id = 33, TuberOrderId = 15, ToppingId = 7 },
+    new TuberTopping { Id = 34, TuberOrderId = 15, ToppingId = 10 },
+    new TuberTopping { Id = 35, TuberOrderId = 15, ToppingId = 8 },
+    new TuberTopping { Id = 36, TuberOrderId = 16, ToppingId = 5 },
+    new TuberTopping { Id = 37, TuberOrderId = 16, ToppingId = 6 },
+    new TuberTopping { Id = 38, TuberOrderId = 17, ToppingId = 3 },
+    new TuberTopping { Id = 39, TuberOrderId = 17, ToppingId = 4 },
+    new TuberTopping { Id = 40, TuberOrderId = 17, ToppingId = 2 },
+    new TuberTopping { Id = 41, TuberOrderId = 18, ToppingId = 9 },
+    new TuberTopping { Id = 42, TuberOrderId = 18, ToppingId = 10 },
+    new TuberTopping { Id = 43, TuberOrderId = 19, ToppingId = 7 },
+    new TuberTopping { Id = 44, TuberOrderId = 19, ToppingId = 8 },
+    new TuberTopping { Id = 45, TuberOrderId = 20, ToppingId = 1 },
+    new TuberTopping { Id = 46, TuberOrderId = 20, ToppingId = 2 },
+    new TuberTopping { Id = 47, TuberOrderId = 20, ToppingId = 3 },
+    new TuberTopping { Id = 48, TuberOrderId = 1, ToppingId = 10 },
+    new TuberTopping { Id = 49, TuberOrderId = 2, ToppingId = 1 },
+    new TuberTopping { Id = 50, TuberOrderId = 2, ToppingId = 5 },
+    new TuberTopping { Id = 51, TuberOrderId = 3, ToppingId = 10 },
+    new TuberTopping { Id = 52, TuberOrderId = 4, ToppingId = 6 },
+    new TuberTopping { Id = 53, TuberOrderId = 5, ToppingId = 9 },
+    new TuberTopping { Id = 54, TuberOrderId = 6, ToppingId = 4 },
+    new TuberTopping { Id = 55, TuberOrderId = 7, ToppingId = 5 },
+    new TuberTopping { Id = 56, TuberOrderId = 8, ToppingId = 7 },
+    new TuberTopping { Id = 57, TuberOrderId = 9, ToppingId = 5 },
+    new TuberTopping { Id = 58, TuberOrderId = 10, ToppingId = 6 },
+    new TuberTopping { Id = 59, TuberOrderId = 11, ToppingId = 3 },
+    new TuberTopping { Id = 60, TuberOrderId = 12, ToppingId = 8 },
+    new TuberTopping { Id = 61, TuberOrderId = 13, ToppingId = 6 },
+    new TuberTopping { Id = 62, TuberOrderId = 14, ToppingId = 7 },
+    new TuberTopping { Id = 63, TuberOrderId = 15, ToppingId = 3 },
+    new TuberTopping { Id = 64, TuberOrderId = 16, ToppingId = 2 },
+    new TuberTopping { Id = 65, TuberOrderId = 17, ToppingId = 1 },
+    new TuberTopping { Id = 66, TuberOrderId = 18, ToppingId = 3 },
+    new TuberTopping { Id = 67, TuberOrderId = 19, ToppingId = 4 },
+    new TuberTopping { Id = 68, TuberOrderId = 20, ToppingId = 5 },
+    new TuberTopping { Id = 69, TuberOrderId = 1, ToppingId = 3 },
+    new TuberTopping { Id = 70, TuberOrderId = 2, ToppingId = 7 },
+    new TuberTopping { Id = 71, TuberOrderId = 3, ToppingId = 8 },
+    new TuberTopping { Id = 72, TuberOrderId = 4, ToppingId = 9 },
+    new TuberTopping { Id = 73, TuberOrderId = 5, ToppingId = 1 },
+    new TuberTopping { Id = 74, TuberOrderId = 6, ToppingId = 2 },
+    new TuberTopping { Id = 75, TuberOrderId = 7, ToppingId = 4 },
+    new TuberTopping { Id = 76, TuberOrderId = 8, ToppingId = 6 },
+    new TuberTopping { Id = 77, TuberOrderId = 9, ToppingId = 7 },
+    new TuberTopping { Id = 78, TuberOrderId = 10, ToppingId = 9 },
+    new TuberTopping { Id = 79, TuberOrderId = 11, ToppingId = 10 },
+    new TuberTopping { Id = 80, TuberOrderId = 12, ToppingId = 1 },
+    new TuberTopping { Id = 81, TuberOrderId = 13, ToppingId = 2 },
+    new TuberTopping { Id = 82, TuberOrderId = 14, ToppingId = 4 },
+    new TuberTopping { Id = 83, TuberOrderId = 15, ToppingId = 6 }
+};
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -77,6 +163,231 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 //add endpoints here
+
+// Get Endpoints
+app.MapGet("/tuberorders", () =>
+{
+    return orders.Select(o =>
+    {
+        var tops = orderToppings
+            .Where(t => t.TuberOrderId == o.Id)
+            .Select(t => new TuberToppingDTO
+            {
+                Id = t.Id,
+                TuberOrderId = t.TuberOrderId,
+                ToppingId = t.ToppingId
+            })
+            .ToList();
+        return new TuberOrderDTO
+        {
+            Id = o.Id,
+            OrderPlacedOnDate = o.OrderPlacedOnDate,
+            CustomerId = o.CustomerId,
+            TuberDriverId = o.TuberDriverId,
+            DeliveredOnDate = o.DeliveredOnDate,
+            TuberToppings = tops
+        };
+    });
+});
+
+app.MapGet("/tuberorders/{id}", (int id) =>
+{
+    TuberOrder order = orders.FirstOrDefault(o => o.Id == id);
+    var tops = orderToppings
+        .Where(t => t.TuberOrderId == id)
+        .Select(t => new TuberToppingDTO
+        {
+            Id = t.Id,
+            TuberOrderId = t.TuberOrderId,
+            ToppingId = t.ToppingId
+        })
+        .ToList();
+    return new TuberOrderDTO
+    {
+        Id = order.Id,
+        OrderPlacedOnDate = order.OrderPlacedOnDate,
+        CustomerId = order.CustomerId,
+        TuberDriverId = order.TuberDriverId,
+        DeliveredOnDate = order.DeliveredOnDate,
+        TuberToppings = tops
+    };
+});
+
+app.MapGet("/toppings", () =>
+{
+    return toppings.Select(t =>
+    {
+        return new ToppingDTO
+        {
+            Id = t.Id,
+            Name = t.Name
+        };
+    });
+});
+
+app.MapGet("/tubertoppings", () =>
+{
+    return orderToppings.Select(t =>
+    {
+        return new TuberToppingDTO
+        {
+            Id = t.Id,
+            TuberOrderId = t.TuberOrderId,
+            ToppingId = t.ToppingId
+        };
+    });
+});
+
+app.MapGet("/customers", () =>
+{
+    return customers.Select(c =>
+    {
+        var customerOrders = orders
+            .Where(o => o.CustomerId == c.Id)
+            .Select(o =>
+            {
+                var tops = orderToppings
+                    .Where(t => t.TuberOrderId == o.Id)
+                    .Select(t => new TuberToppingDTO
+                    {
+                        Id = t.Id,
+                        TuberOrderId = t.TuberOrderId,
+                        ToppingId = t.ToppingId
+                    })
+                    .ToList();
+                return new TuberOrderDTO
+                {
+                    Id = o.Id,
+                    OrderPlacedOnDate = o.OrderPlacedOnDate,
+                    CustomerId = o.CustomerId,
+                    TuberDriverId = o.TuberDriverId,
+                    DeliveredOnDate = o.DeliveredOnDate,
+                    TuberToppings = tops
+                };
+            })
+            .ToList();
+        return new CustomerDTO
+        {
+            Id = c.Id,
+            Name = c.Name,
+            Address = c.Address,
+            TuberOrders = customerOrders
+        };
+    });
+});
+
+app.MapGet("/tuberdrivers", () =>
+{
+    return drivers.Select(d =>
+    {
+        var driverDeliveries = orders
+            .Where(o => o.TuberDriverId != null)
+            .Where(o => o.TuberDriverId == d.Id)
+            .Select(o =>
+            {
+                var tops = orderToppings
+                    .Where(t => t.TuberOrderId == o.Id)
+                    .Select(t => new TuberToppingDTO
+                    {
+                        Id = t.Id,
+                        TuberOrderId = t.TuberOrderId,
+                        ToppingId = t.ToppingId
+                    })
+                    .ToList();
+                return new TuberOrderDTO
+                {
+                    Id = o.Id,
+                    OrderPlacedOnDate = o.OrderPlacedOnDate,
+                    CustomerId = o.CustomerId,
+                    TuberDriverId = o.TuberDriverId,
+                    DeliveredOnDate = o.DeliveredOnDate,
+                    TuberToppings = tops
+                };
+            })
+            .ToList();
+        return new TuberDriverDTO
+        {
+            Id = d.Id,
+            Name = d.Name,
+            TuberDeliveries = driverDeliveries
+        };
+    });
+});
+
+// Post Endpoints
+app.MapPost("/tuberorders", (TuberOrder order) =>
+{
+    // create new order
+    order.Id = orders.Max(o => o.Id) + 1;
+    order.OrderPlacedOnDate = DateTime.Today;
+    orders.Add(order);
+
+    // create new order toppings
+    foreach (int toppingId in order.TuberToppingIds)
+    {
+        TuberTopping newTuberTopping = new TuberTopping
+        {
+            Id = orderToppings.Max(ot => ot.Id) + 1,
+            TuberOrderId = order.Id,
+            ToppingId = toppingId
+        };
+        orderToppings.Add(newTuberTopping);
+    };
+
+    // find new order toppings
+    var tops = orderToppings
+        .Where(t => t.TuberOrderId == order.Id)
+        .Select(t => new TuberToppingDTO
+        {
+            Id = t.Id,
+            TuberOrderId = t.TuberOrderId,
+            ToppingId = t.ToppingId
+        })
+        .ToList();
+
+    // return new order
+    return Results.Created($"/tuberorders/{order.Id}", new TuberOrderDTO
+    {
+        Id = order.Id,
+        OrderPlacedOnDate = order.OrderPlacedOnDate,
+        CustomerId = order.CustomerId,
+        TuberDriverId = order.TuberDriverId,
+        DeliveredOnDate = order.DeliveredOnDate,
+        TuberToppings = tops
+    });
+});
+
+app.MapPost("/tuberorders/{id}/complete", (int id) => 
+{
+    TuberOrder orderToEdit = orders.FirstOrDefault(o => o.Id == id);
+    
+    if (orderToEdit == null)
+    {
+        return Results.BadRequest();
+    }
+
+    orderToEdit.DeliveredOnDate = DateTime.Today;
+
+    return Results.NoContent();
+});
+
+// Put Endpoints
+app.MapPut("/tuberorders/{id}", (int id, TuberOrder order) =>
+{
+    TuberOrder orderToEdit = orders.FirstOrDefault(o => o.Id == id);
+    if (orderToEdit == null)
+    {
+        return Results.NotFound();
+    }
+    if (id != orderToEdit.Id)
+    {
+        return Results.BadRequest();
+    }
+
+    orderToEdit.TuberDriverId = order.TuberDriverId;
+
+    return Results.NoContent();
+});
 
 app.Run();
 //don't touch or move this!
