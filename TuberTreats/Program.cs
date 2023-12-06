@@ -357,10 +357,10 @@ app.MapPost("/tuberorders", (TuberOrder order) =>
     });
 });
 
-app.MapPost("/tuberorders/{id}/complete", (int id) => 
+app.MapPost("/tuberorders/{id}/complete", (int id) =>
 {
     TuberOrder orderToEdit = orders.FirstOrDefault(o => o.Id == id);
-    
+
     if (orderToEdit == null)
     {
         return Results.BadRequest();
@@ -369,6 +369,19 @@ app.MapPost("/tuberorders/{id}/complete", (int id) =>
     orderToEdit.DeliveredOnDate = DateTime.Today;
 
     return Results.NoContent();
+});
+
+app.MapPost("/tubertoppings", (TuberTopping topping) =>
+{
+    topping.Id = orderToppings.Max(t => t.Id) + 1;
+    orderToppings.Add(topping);
+
+    return new TuberToppingDTO
+    {
+        Id = topping.Id,
+        TuberOrderId = topping.TuberOrderId,
+        ToppingId = topping.ToppingId
+    };
 });
 
 // Put Endpoints
