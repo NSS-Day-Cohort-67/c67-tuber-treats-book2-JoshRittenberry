@@ -389,6 +389,20 @@ app.MapPut("/tuberorders/{id}", (int id, TuberOrder order) =>
     return Results.NoContent();
 });
 
+// Delete Endpoints
+app.MapDelete("/tubertoppings/{id}/remove", (int id) =>
+{
+    TuberTopping toppingToRemove = orderToppings.FirstOrDefault(ot => ot.Id == id);
+    orderToppings.Remove(toppingToRemove);
+
+    if (toppingToRemove == null)
+    {
+        return Results.BadRequest();
+    }
+
+    return Results.NoContent();
+});
+
 app.Run();
 //don't touch or move this!
 public partial class Program { }
