@@ -225,6 +225,16 @@ app.MapGet("/toppings", () =>
     });
 });
 
+app.MapGet("/toppings/{id}", (int id) =>
+{
+    Topping topping = toppings.FirstOrDefault(t => t.Id == id);
+    return new ToppingDTO
+    {
+        Id = topping.Id,
+        Name = topping.Name
+    };
+});
+
 app.MapGet("/tubertoppings", () =>
 {
     return orderToppings.Select(t =>
@@ -276,6 +286,42 @@ app.MapGet("/customers", () =>
     });
 });
 
+app.MapGet("/customers/{id}", (int id) =>
+{
+    Customer customer = customers.FirstOrDefault(c => c.Id == id);
+    var customerOrders = orders
+        .Where(o => o.CustomerId == id)
+        .Select(o =>
+        {
+            var tops = orderToppings
+                .Where(t => t.TuberOrderId == o.Id)
+                .Select(t => new TuberToppingDTO
+                {
+                    Id = t.Id,
+                    TuberOrderId = t.TuberOrderId,
+                    ToppingId = t.ToppingId
+                })
+                .ToList();
+            return new TuberOrderDTO
+            {
+                Id = o.Id,
+                OrderPlacedOnDate = o.OrderPlacedOnDate,
+                CustomerId = o.CustomerId,
+                TuberDriverId = o.TuberDriverId,
+                DeliveredOnDate = o.DeliveredOnDate,
+                TuberToppings = tops
+            };
+        })
+        .ToList();
+    return new CustomerDTO
+    {
+        Id = customer.Id,
+        Name = customer.Name,
+        Address = customer.Address,
+        TuberOrders = customerOrders
+    };
+});
+
 app.MapGet("/tuberdrivers", () =>
 {
     return drivers.Select(d =>
@@ -313,6 +359,43 @@ app.MapGet("/tuberdrivers", () =>
         };
     });
 });
+
+app.MapGet("/tuberdrivers/{id}", (int id) =>
+{
+    TuberDriver driver = drivers.FirstOrDefault(d => d.Id == id);
+    var driverDeliveries = orders
+        .Where(o => o.TuberDriverId != null)
+        .Where(o => o.TuberDriverId == id)
+        .Select(o =>
+        {
+            var tops = orderToppings
+                .Where(t => t.TuberOrderId == o.Id)
+                .Select(t => new TuberToppingDTO
+                {
+                    Id = t.Id,
+                    TuberOrderId = t.TuberOrderId,
+                    ToppingId = t.ToppingId
+                })
+                .ToList();
+            return new TuberOrderDTO
+            {
+                Id = o.Id,
+                OrderPlacedOnDate = o.OrderPlacedOnDate,
+                CustomerId = o.CustomerId,
+                TuberDriverId = o.TuberDriverId,
+                DeliveredOnDate = o.DeliveredOnDate,
+                TuberToppings = tops
+            };
+        })
+        .ToList();
+    return new TuberDriverDTO
+    {
+        Id = driver.Id,
+        Name = driver.Name,
+        TuberDeliveries = driverDeliveries
+    };
+});
+
 
 // Post Endpoints
 app.MapPost("/tuberorders", (TuberOrder order) =>
@@ -384,6 +467,19 @@ app.MapPost("/tubertoppings", (TuberTopping topping) =>
     };
 });
 
+app.MapPost("/customers", (Customer customer) =>
+{
+    customer.Id = customers.Max(c => c.Id) + 1;
+    customers.Add(customer);
+
+    return new CustomerDTO
+    {
+        Id = customer.Id,
+        Name = customer.Name,
+        Address = customer.Address
+    };
+});
+
 // Put Endpoints
 app.MapPut("/tuberorders/{id}", (int id, TuberOrder order) =>
 {
@@ -406,13 +502,26 @@ app.MapPut("/tuberorders/{id}", (int id, TuberOrder order) =>
 app.MapDelete("/tubertoppings/{id}/remove", (int id) =>
 {
     TuberTopping toppingToRemove = orderToppings.FirstOrDefault(ot => ot.Id == id);
-    orderToppings.Remove(toppingToRemove);
 
     if (toppingToRemove == null)
     {
         return Results.BadRequest();
     }
 
+    orderToppings.Remove(toppingToRemove);
+    return Results.NoContent();
+});
+
+app.MapDelete("/customers/{id}/remove", (int id) =>
+{
+    Customer customerToRemove = customers.FirstOrDefault(c => c.Id == id);
+
+    if (customerToRemove == null)
+    {
+        return Results.BadRequest();
+    }
+
+    customers.Remove(customerToRemove);
     return Results.NoContent();
 });
 
