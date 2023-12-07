@@ -8,5 +8,5 @@ public class TuberOrder
     public int? TuberDriverId { get; set; }
     public DateTime? DeliveredOnDate { get; set; }
     public int[] TuberToppingIds { get; set; }
-    public List<TuberTopping> TuberToppings { get; set; }
+    public List<Topping> Toppings { get; set; }
 }
